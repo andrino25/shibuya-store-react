@@ -1,0 +1,149 @@
+/* CartPage.css */
+
+.cart-container {
+    max-width: 1000px;
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin-bottom: 2%;
+}
+
+.cart-header {
+    margin-bottom: 20px;
+}
+
+.cart-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+.cart-items table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-items th, .cart-items td {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.cart-store-image {
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cart-items th {
+    font-size: 24px;
+    background-color: #f0f0f0;
+}
+
+.cart-items td {
+    border-top: 1px solid #ddd;
+}
+
+.cart-item-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.cart-item-image:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.checkout-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+.checkout-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.checkout-card p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.checkout-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.checkout-button:hover {
+    background-color: black;
+}
+
+/* Decrease and Increase Quantity Buttons */
+.quantity-buttons {
+    background-color: #333; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 5px 10px; /* Add padding to button */
+    border-radius: 5px; /* Add border radius to button */
+    cursor: pointer; /* Add cursor pointer on hover */
+    margin-left: 10px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.quantity-buttons:hover {
+    background-color: black; /* Button background color on hover */
+}
+
+/* Delete Button */
+.delete-button {
+    background-color: #dc3545; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 15px; /* Add padding to button */
+    border-radius: 5px; /* Add border radius to button */
+    cursor: pointer; /* Add cursor pointer on hover */
+    font-weight: bold;
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Button background color on hover */
+}
+
+@media (max-width: 768px) {
+    .cart-container {
+        margin-left: 5%; /* Adjust margin for smaller screens */
+        margin-right: 5%; /* Adjust margin for smaller screens */
+    }
+    
+    .cart-store-image {
+        width: 100%; /* Make the store image responsive */
+        margin-top: 40px; /* Adjust margin for smaller screens */
+    }
+
+    /* Adjust other styles as needed for smaller screens */
+}

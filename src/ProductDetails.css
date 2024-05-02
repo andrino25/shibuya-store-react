@@ -1,0 +1,88 @@
+/* ProductDetails.css */
+
+.card-title1{
+  margin-bottom: 3%;
+  margin-left: 3%;
+}
+.details-container {
+  max-width: 1000px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px;
+  background-color: #ffffff; /* Background color of the card */
+  border-radius: 10px; /* Border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-left: 5%;
+}
+
+.details-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.details-img1,
+.details-img2 {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  width: calc(50% - 10px); /* Each image takes up 50% of the container width with a small gap between them */
+  display: inline-block; /* Display images inline */
+  height: 200px; /* Set a specific height for the card */
+  margin-left: 10px;
+}
+
+.details-img1 img,
+.details-img2 img {
+  width: 100%;
+  height: 100%; /* Ensure the image covers the entire space within the container */
+  object-fit: cover; /* Ensure the image covers the entire space while maintaining aspect ratio */
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.details-img1 img:hover,
+.details-img2 img:hover {
+  transform: scale(1.1);
+}
+
+/* Enlarged Image Container */
+.enlarged-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enlarged-image {
+  max-width: 90%; /* Limit the maximum width of the enlarged image */
+  max-height: 90%; /* Limit the maximum height of the enlarged image */
+}
+
+.enlarged-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure the image fits within the container without distortion */
+}
+
+.modal-body{
+  margin-bottom: 5%;
+}
+
+.col-lg-7{
+  margin-left: 3%;
+}
+
+.add-to-cart-btn:hover{
+  background-color: black;
+}
+
+
