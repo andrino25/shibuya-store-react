@@ -68,61 +68,80 @@ function ProductList() {
   
   return (
     <div className="container">
-      {/* Header */}
-      {/* Store image */}
-      <div className="row">
-        <div className="col">
-          <img src="https://i.redd.it/jujitsu-kaisen-ultrawide-wallpaper-5120x1440-v0-xz8qmuar9qsa1.png?width=5120&format=png&auto=webp&s=bbd15354e4ccd9790ee8b661b8182a82234e89f1" alt="Store Image" className="store-image" />
+  {/* Header */}
+  {/* Store image */}
+  <div className="row">
+    <div className="col">
+      <img
+        src="https://i.redd.it/jujitsu-kaisen-ultrawide-wallpaper-5120x1440-v0-xz8qmuar9qsa1.png?width=5120&format=png&auto=webp&s=bbd15354e4ccd9790ee8b661b8182a82234e89f1"
+        alt="Store Image"
+        className="store-image"
+      />
+    </div>
+  </div>
+  
+  {/* Products */}
+  <div className="row">
+    <div className="col">
+      <h2 className="section-title">Products</h2>
+      
+      {/* Controls */}
+      <div className="controls">
+        {/* Category dropdown */}
+        <div className="categories">
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="btn btn--primary"
+          >
+            <option value="">All Categories</option>
+            <option value="Naruto">Naruto</option>
+            <option value="Jujutsu Kaisen">Jujutsu Kaisen</option>
+            <option value="Demon Slayer">Demon Slayer</option>
+          </select>
+        </div>
+        
+        {/* Sort toggle button */}
+        <div className="sort-toggle">
+          <button className="btn" onClick={handleSortToggle}>
+            {sortByPriceAsc ? 'Sort by Price: Low to High' : 'Sort by Price: High to Low'}
+          </button>
         </div>
       </div>
-      {/* Products */}
-      <div className="row">
-        <div className="col">
-          <h2 className="section-title">Products</h2>
-          {/* Controls */}
-          <div className="controls">
-            {/* Category dropdown */}
-            <div className="categories">
-              <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} className="btn btn--primary">
-                <option value="">All Categories</option>
-                <option value="Naruto">Naruto</option>
-                <option value="Jujutsu Kaisen">Jujutsu Kaisen</option>
-                <option value="Demon Slayer">Demon Slayer</option>
-              </select>
-            </div>
-            {/* Sort toggle button */}
-            <div className="sort-toggle">
-              <button className="btn" onClick={handleSortToggle}>
-                {sortByPriceAsc ? 'Sort by Price: Low to High' : 'Sort by Price: High to Low'}
+
+      {/* Product list */}
+      <div className="product-list row">
+        {products.map((product) => (
+          <div key={product.id} className="product-card col">
+            <Link to={`/product/${product.id}`}>
+              <div className="image-container">
+                <img className="img-responsive" src={product.productImage} alt={product.productName} />
+                <img className="img-responsive hover-image" src={product.productImage2} alt={product.productName} />
+              </div>
+              <div className="product-details">
+                <h2>{product.productName}</h2>
+                <p>{product.productDescription}</p>
+                <div className="price-quantity">
+                  <p className="price">Price: ${product.productPrice}</p>
+                </div>
+              </div>
+            </Link>
+            {/* Centering the Add to Cart button */}
+            <div className="controls">
+              <button onClick={() => handleAddToCart(product.id)} className="add-to-cart-btn">
+                Add to Cart 🛒
               </button>
             </div>
           </div>
-          {/* Product list */}
-          <div className="product-list row">
-            {products.map((product) => (
-              <div key={product.id} className="product-card col">
-                <Link to={`/product/${product.id}`}>
-                  <div className="image-container">
-                    <img className="img-responsive" src={product.productImage} alt={product.productName} />
-                    <img className="img-responsive hover-image" src={product.productImage2} alt={product.productName} />
-                  </div>
-                  <div className="product-details">
-                    <h2>{product.productName}</h2>
-                    <p>{product.productDescription}</p>
-                    <div className="price-quantity">
-                      <p className="price">Price: ${product.productPrice}</p>
-                    </div>
-                  </div>
-                </Link>
-                <button onClick={() => handleAddToCart(product.id)} className="add-to-cart-btn">Add to Cart 🛒 </button>
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
-      {/* Add ToastContainer here */}
-      <ToastContainer  position="top-center"/>
     </div>
+  </div>
+  
+  {/* Add ToastContainer here */}
+  <ToastContainer position="top-center" />
+</div>
+
   );
 }
 

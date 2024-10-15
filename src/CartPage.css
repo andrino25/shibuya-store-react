@@ -28,13 +28,16 @@
     width: 100%;
     border-collapse: collapse;
 }
-.cart-items th, .cart-items td {
+
+.cart-items th,
+.cart-items td {
     padding: 20px;
     border-bottom: 1px solid #ddd;
     text-align: center;
     vertical-align: middle;
     font-weight: bold;
 }
+
 .cart-store-image {
     width: 90%;
     height: auto;
@@ -134,10 +137,12 @@
     background-color: #c82333; /* Button background color on hover */
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
     .cart-container {
         margin-left: 5%; /* Adjust margin for smaller screens */
         margin-right: 5%; /* Adjust margin for smaller screens */
+        padding: 10px; /* Reduce padding on smaller screens */
     }
     
     .cart-store-image {
@@ -145,5 +150,32 @@
         margin-top: 40px; /* Adjust margin for smaller screens */
     }
 
-    /* Adjust other styles as needed for smaller screens */
+    .cart-items th,
+    .cart-items td {
+        padding: 10px; /* Reduce padding in table cells */
+        font-size: 14px; /* Smaller font size for smaller screens */
+    }
+
+    .checkout-card h3 {
+        font-size: 18px; /* Reduce font size for checkout title */
+    }
+
+    .checkout-card p {
+        font-size: 14px; /* Reduce font size for checkout info */
+    }
+
+    .checkout-button {
+        width: 100%; /* Make checkout button full width */
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .quantity-buttons {
+        padding: 5px; /* Adjust button padding for smaller screens */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .cart-item-image {
+        width: 80px; /* Adjust image size for mobile */
+        height: 80px; /* Adjust height for mobile */
+    }
 }

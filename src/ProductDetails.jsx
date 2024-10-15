@@ -76,58 +76,70 @@ function ProductDetails() {
   return (
     <>
     <h1 className="card-title1">Product Details</h1>
-    <div className="details-container mt-5">
-      {enlargedImage && (
-        <div className="modal fade show" tabIndex="-1" style={{ display: 'block' }} onClick={() => setEnlargedImage(null)}>
-          <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="modal-body" style={{ width: '500px', height: '500px' }}> {/* Adjust width and height as needed */}
-                <img className="img-fluid" src={enlargedImage} alt="Enlarged" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+    <div className="the-container"> {/* Added container div */}
+      <div className="details-container mt-5"> {/* Adjusted details-container */}
+        {enlargedImage && (
+          <div
+            className="modal fade show"
+            tabIndex="-1"
+            style={{ display: 'block' }}
+            onClick={() => setEnlargedImage(null)}
+          >
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-body" style={{ width: '500px', height: '500px' }}>
+                  <img
+                    className="img-fluid"
+                    src={enlargedImage}
+                    alt="Enlarged"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
-
-      <div className="details-row">
-        {products.map((product, index) => (
-          <div className="col-lg-12" key={index}>
-            <div className="details-card">
-              <div className="card-body">
-                <div className="details-img1">
-                  <img
-                    className="card-img-top img-fluid"
-                    src={product.productImage}
-                    alt={product.productName}
-                    onClick={() => setEnlargedImage(product.productImage)}
-                  />
-                </div>
-                <div className="details-img2">
-                  <img
-                    className="card-img-top img-fluid"
-                    src={product.productImage2}
-                    alt={product.productName}
-                    onClick={() => setEnlargedImage(product.productImage2)}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-7">
-              <div className="card">
+        )}
+  
+        <div className="details-row">
+          {products.map((product, index) => (
+            <div className="col-lg-12" key={index}>
+              <div className="details-card">
                 <div className="card-body">
-                  <h1 className="card-title">{product.productName}</h1>
-                  <p className="card-text">{product.productDescription}</p>
-                  <h4 className="card-subtitle mb-2 text-muted">Price: ${product.productPrice}</h4>
-                  <button onClick={() => handleAddToCart(product.id)} className="add-to-cart-btn">Add to Cart 🛒 </button>
+                  <div className="details-img1">
+                    <img
+                      className="card-img-top img-fluid"
+                      src={product.productImage}
+                      alt={product.productName}
+                      onClick={() => setEnlargedImage(product.productImage)}
+                    />
+                  </div>
+                  <div className="details-img2">
+                    <img
+                      className="card-img-top img-fluid"
+                      src={product.productImage2}
+                      alt={product.productName}
+                      onClick={() => setEnlargedImage(product.productImage2)}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-7">
+                <div className="card">
+                  <div className="card-body">
+                    <h1 className="card-title">{product.productName}</h1>
+                    <p className="card-text">{product.productDescription}</p>
+                    <h4 className="card-subtitle mb-2 text-muted">Price: ${product.productPrice}</h4>
+                    <button onClick={() => handleAddToCart(product.id)} className="add-to-cart-btn">Add to Cart 🛒</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <ToastContainer position="top-center" />
       </div>
-      <ToastContainer position="top-center" />
-    </div>
-    </>
+    </div> {/* End of the container */}
+  </>  
   );
 }
 
