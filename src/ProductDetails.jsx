@@ -75,7 +75,7 @@ function ProductDetails() {
 
   return (
     <>
-    <h1 className="card-title1">Product Details</h1>
+    <h2 className="card-title1">Product Details</h2>
     <div className="the-container"> {/* Added container div */}
       <div className="details-container mt-5"> {/* Adjusted details-container */}
         {enlargedImage && (
