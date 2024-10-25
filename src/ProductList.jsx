@@ -98,6 +98,7 @@ function ProductList() {
             <option value="Naruto">Naruto</option>
             <option value="Jujutsu Kaisen">Jujutsu Kaisen</option>
             <option value="Demon Slayer">Demon Slayer</option>
+            <option value="Bini">Bini</option>
           </select>
         </div>
         
